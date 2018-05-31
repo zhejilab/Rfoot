@@ -2,7 +2,7 @@ if ($#ARGV < 1) {
 	print "##Rfoot analyses"."\n";
 	print "usage: perl Rfoot.pl -i readFile -t transcriptFile -o outputFile [-w windownSize] [-r readnumCutoff] [-f translatedORFFile]"."\n";
 	print "-i readFile: input read mapping file in SAM format;"."\n";
-	print "-t transcriptFile: transcripts of interest, genePred format;"."\n";
+	print "-t transcriptFile: transcript annotation file in genePred format;"."\n";
 	print "-o outputFile: output file reporting candidate non-ribosomal sites;"."\n";
 	print "-w windownSize [optional]: scanning window size [optional], default: 60 nt;"."\n";
 	print "-r readnumCutoff [optional]: cutoff of supported read number, default: 10;"."\n";
@@ -16,8 +16,20 @@ use Getopt::Std;
 my %args; 
 getopt("itowrf",\%args);
 my $samfile=$args{i}; 
+if (! $samfile) {
+	print "No read mapping file"."\n";
+    exit;
+}
 my $transfile=$args{t}; 
+if (! $transfile) {
+	print "No transcript annotation file"."\n";
+    exit;
+}
 my $outputFile=$args{o}; 
+if (! $outputFile) {
+	print "No output file"."\n";
+    exit;
+}
 my $win=$args{w};
 my $readcoff=$args{r};
 my $orffile=$args{f};
