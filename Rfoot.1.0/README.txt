@@ -1,6 +1,7 @@
 Rfoot: Transcriptome-scale identification of RNA-protein complexes from ribosome profiling data
 
 Contact: Zhe Ji (zhe.ji@northwestern.edu)
+
 Materials:
 Ribosome profiling datasets in Fastq format;
 Genome assembly file in Fasta format;
