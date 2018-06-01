@@ -48,3 +48,5 @@ perl Rfoot.pl -i SRR1802146.mapping.sam -t gencode.v28.annotation.genePred.txt -
 
 The output file reporting candidate non-ribosomal protein-RNA footprints, with the following columns: “transcript ID”, “chromosome”, “strand”, “footprint start site”, “footprint end site”, “footprint length”, “supported read number”, “position with maximum number of reads”, “maximum number of reads in a location”, “positions with supported reads (location:read number)”.
 
+
+
